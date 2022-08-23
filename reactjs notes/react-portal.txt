@@ -1,0 +1,11 @@
+section 9 notes: 
+react portal:
+    react-dom is used to bring all the react logic and its feature into the browser
+
+    the idea of ReactDOM.createPortal() is to move the render HTML content moved somewhere else in the structure
+
+    it can be used anywhere we can use jsx/component 
+    BUT ONLY in the actual dom is being rendered
+    
+// why we use ref
+
