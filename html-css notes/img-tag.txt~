@@ -14,3 +14,4 @@ Use background-image if you intend to have people print your page and you do not
 Use background-image if you need to improve download times, as with CSS sprites.
 Use background-image if you need for only a portion of the image to be visible, as with CSS sprites.
 Use background-image with background-size:cover in order to stretch a background image to fill its entire window.
+
