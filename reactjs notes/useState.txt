@@ -1,0 +1,49 @@
+// use state
+react schedules the state update,
+it doesnt perform    immediately
+so if we are using useState in follow way,
+
+const [input, setInput] = useState({
+    enteredName='',
+    enteredPassword='',
+})
+
+const nameHandler=(event)=> {
+    setInput({
+        ...input,
+        enteredName: event.target.value
+    })
+}
+
+this might lead to some unexpected result
+
+so always pass a previous state by using anon function like below,
+
+const [input, setInput] = useState({
+    enteredName: '',
+    enteredPassword: ''
+})
+
+const nameHandler=(event)=> {
+    setInput((prevState) => {
+        return {...prevState, enteredName: event.target.value}
+    })
+}
+
+so, react makes sure here that prevState is the latest snapshot and we won't miss any scheduled updates, aka FUNCTION IS SAFER WAY
+
+also use this WHEN UPDATE DEPENDS ON PREVIOUS STATE, ex: increasing counter
+
+
+NOTE: THESE SCENARIOS MIGHT HAPPEN WHEN ARE ARE UPDATING MULTIPLE STATE AT THE SAME TIME.
+ 
+// always use onSubmit on form if you have data to submit, more pro way
+// so, avoid using this: <button onSubmit={ submitHandler}>Send<button/>
+
+Two way binding is very useful when working with forms
+    - allows to gather input
+    - allows to change the input upon form submission
+    
+By default react passes props from parent to child component, like below:
+
+

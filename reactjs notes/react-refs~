@@ -1,6 +1,0 @@
-// useRef
-it allows access to other DOMS & let us work with them,
-if we only need to read values we should use useRef
-if we only need to read values from the input box we should use useRef and avoid using onChange, because it will fire on every keystroke,
-
-

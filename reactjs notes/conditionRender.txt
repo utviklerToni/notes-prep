@@ -1,0 +1,11 @@
+To render an array list, always use map() method.
+
+Also, react needs a property on its element called "key".
+React needs this because each time lets say we add an item/user to some lists we are rendering, react would need to re-render the list or array and if we provide the key on it, react will figure out which components/elements needs to be updated/added
+
+NOTE:   if we do not provide a key, react would update the whole list,  which is a very expensive/extra work for DOM, so we must always provide a key when rendering a list. 
+        We might also lose any state on those elements which gets updated un-necessarily.
+        It also helps react to add the value in the array on the right index, which is on top.
+        
+        SO REACT NEEDS IT TO IDENTIFY THE ITEMS IN ITS ARRAY
+
