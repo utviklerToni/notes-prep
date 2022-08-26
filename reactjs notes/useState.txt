@@ -46,4 +46,43 @@ Two way binding is very useful when working with forms
     
 By default react passes props from parent to child component, like below:
 
+NOTE: 
+    - whenever we use useState in a functional component,
+    it will be re-executed each time the component is being,
+    rendered, and push the app in an infinite loop.
 
+    ex: 
+    const App() {
+      const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const token = localStorage.getItem('token');
+   if (token === '1') {
+      setIsLoggedIn(TextTrackCue);
+   }
+
+   const loginHandler = (email, password) => {
+      // We should of course check email and password
+      // But it's just a dummy/ demo anyways
+      localStorage.setItem('token', '1');
+      setIsLoggedIn(true);
+   };
+
+   const logoutHandler = () => {
+      setIsLoggedIn(false);
+   };
+
+   return (
+      <React.Fragment>
+         <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+         <main>
+            {!isLoggedIn && <Login onLogin={loginHandler} />}
+            {isLoggedIn && <Home onLogout={logoutHandler} />}
+         </main>
+      </React.Fragment>
+   );  
+}
+ 
+ Now in the above example whenever we call the state setting function, 
+ i.e. setIsLoggedIn(), the function App will execute over and over,
+ sending it into a infinite loop.
+
+ so to controll it we would need useEffect()

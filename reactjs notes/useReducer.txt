@@ -1,0 +1,20 @@
+whats a side effect ?
+
+Main job of react is to evaluate a component and render the UI. Any other task
+would be called side effect, like 
+   - a component requesting data from server,
+   - storing data into the broswer, 
+   - sending http request,
+   - set and manage timers
+
+To handle side effect we will use useEffect() hook,
+   - called with 2 para,
+      ex: useEffect(() => {...}, [ dependencies ]);
+                    -----------    ------------
+                    1st parameter   2nd parameter 
+      
+      1st para: a function that should be executed after every component
+                evaluation if the specified dependencies changed.
+
+      2nd para: dependencies of this effect - the function only runs if the dependencies changed
+
