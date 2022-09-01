@@ -10,4 +10,3 @@ use state when we actually need to change something,
 if we just wanna read value, ref is pro approach(after its all about writing concise code), 
 
 CAUTION: using refs is like playing dart when you're drunk, where dart board is your BALLS, and your drunk friends are throwing the dart. 0_0
-
