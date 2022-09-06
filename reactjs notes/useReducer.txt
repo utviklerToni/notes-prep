@@ -1,3 +1,5 @@
+HVT
+
 whats a side effect ?
 
 Main job of react is to evaluate a component and render the UI. Any other task
@@ -18,3 +20,39 @@ To handle side effect we will use useEffect() hook,
 
       2nd para: dependencies of this effect - the function only runs if the dependencies changed
 
+NOTE: const [formIsValid, setFormIsValid] = useState(false)
+  - here "setFormIsValid" will always be updated by react and will have
+  the lastest snapshot so we in such case can omitt that in following
+
+  useEffect(() => {
+    setFormIsValid( 
+      enteredEmail.inlcudes('@') && enteredPassword.trim().length > 6
+    )
+  },[enteredEmail, enteredPassword])
+
+NOTE: often side effects are http request, but its also a side effect if we
+listen to every keystroke and save those data and trigger a reponse aka user 
+entering a data in form, input ....etc
+
+NOTE: also avoid updating state(form,input for every key stroke) in useEffect() because react will keep on checking the DOM if it needs to update/render anything new, so if we are sending http request in such case we will end up sending more request end up having more than needed traffic on the network.
+
+NOTE: we can also "return" a single thing inside useEffect() as a clean up process, and it will run whenever the component that we specified in "Unmounts" from DOM  => This clean up return in called "CLEAN UP FUNCTION". And it runs right after executing side effect function
+
+
+useEffect runs after every component cycle
+
+useReducer: 
+   - can be used as a replacemnt of useState, 
+   - its a powerful state management tool
+
+
+Ex: 
+ const emailChangeHandler = (event) => {
+      setEnteredEmail(event.target.value);
+
+      setFormIsValid(
+         event.target.value.includes('@') && enteredPassword.trim().length > 6
+      );
+   };
+
+   in the above code there is a chance that setFormIsValid() might run before the enteredPassword is processed and this can happen due to how react schedules state update/change,
