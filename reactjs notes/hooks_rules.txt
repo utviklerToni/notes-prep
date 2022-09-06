@@ -1,0 +1,9 @@
+always use hooks inside the function which must be a component or custom hooks function
+
+always call it at the top level
+
+do not call in nested function
+
+do not call it in a block statement
+
+always include dependcy inside the useEffect " ==> [] "

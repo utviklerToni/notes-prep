@@ -1,0 +1,3 @@
+used for app wide state changes
+not optimized though for high frequency changes
+do not use to replace all props and comp comm.

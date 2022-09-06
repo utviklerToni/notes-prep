@@ -1,0 +1,13 @@
+// REDUX OPS
+
+NOTE: 
+    whenever we want to change the state of our app, we call 
+    - action creator : which then produces action object 
+
+    - action object : this action object describes how exactly we want to change the data inside our app and then this action object is fed to 
+
+    - dispatch function : this makes copy of action object and feeds to each reducers,
+
+    - reducers : then the reducer will run and will try to process those actions or the forms that came in, then modify their data and then return new data, this returned data gets formed into some new state object
+    
+    So then we wait until we need to update our states again at some point in future.        

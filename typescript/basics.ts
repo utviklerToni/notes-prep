@@ -1,20 +1,15 @@
-How to proceed to master TS 
+Type: easy way to refer to the different properties + functions that a value has
 
-syntax+features
-    what is an interface?
-    
-    what is the syntax for defining an interface?
+value in js is anything we can assign to variable
 
-desgin patterns with TS
-    how do we use interfaces to write reusable code?
+ex: "red"
+    whats red, its a string or its a value that has all the properties & methods that we assume that a string has
     
-    
-    goals
-        understand basic types in ts
-        function typing + annotations
-        type definition files
-        arrays in TS
-        modules systems
-        classes + Refresher on OOP
-        
-        Projects
+obj types: functions, arrays, classes objects
+primitives types: number, boolean, void, null, string, symbol, undefined
+
+Types: used by the TS compiler to analyze our code for errors, 
+       allow other engineers to understand what values are flowing around our codebase
+       
+Why use types?
+It give the TS compiler information to analyze our code for errors
