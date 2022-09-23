@@ -14,3 +14,45 @@ NOTE:
     
     
     30801@(sagar)%?mccrea!#%
+NOTE: NEVER MUTATE/CHANGE EXISTING STATE IN REDUX(INSIDE THE REDUCER)  instead overwrite by returning a new state
+
+Always create brand new object/array whenever you need to update data
+
+NOTE: memoizing is considered when the function keeps making unnecessary request.
+
+example: 
+export const fetchUser = function (id) {
+   return _.memoize(async function (dispatch) {
+      const response = await jsonPlaceholder.get(`/users/${id}`);
+
+      dispatch({ type: 'FETCH_USER', payload: response.data });
+   });
+};
+
+in the example above every time we call fetchUser, we create a new version of the interior function in the memory and it ends up making new request each time, so our intent to memoize fails here as well.
+
+export const fetchUser = _.memoize(function (id) {
+   return async function (dispatch) {
+      const response = await jsonPlaceholder.get(`/users/${id}`);
+
+      dispatch({ type: 'FETCH_USER', payload: response.data });
+   };
+});
+
+in the example above, it does return whatever what returned in the first place, since we are returning a function, we end up making same request again and again, so our intent to memoize fails here as well, i.e. redux-thunk calls the async function and make the request with the dispatch.
+
+To memoize correctly we need to define a separate function and then call it into a different one.
+export const fetchUser = (id) => (dispatch) => {
+   _fetchUser(id, dispatch);
+};
+
+// indicating this is a private function,
+const _fetchUser = _.memoize(async (id, dispatch) => {
+   const response = await jsonPlaceholder.get(`/users/${id}`);
+
+   dispatch({ type: 'FETCH_USER', payload: response.data });
+});
+
+CAUTION: WE THIS SOLUTION WE CAN ONLY FETCH ONE TIME, CANNOT RE-FETCH IF WE ARE EDITING/UPDATING THE DOCUMENT.
+
+Whenever we call an action creator from inside an action creator then we must dispatch the result of calling the action creator.
