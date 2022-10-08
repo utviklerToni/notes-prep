@@ -1,0 +1,25 @@
+~ A monolithic app can be divided into smaller groups of app, isolating them for better use.
+~ Helps avoid chaining of services aka dependency, if one goes down, not all will go down.
+
+~ Gives the benefits of adding distinct feature to each of those isolated smaller group of apps.
+
+~ Multiple team can work in isolation, and on top of that its easy to understand and make changes without creating a mess.(won't break other part of the application.) :)
+
+
+****************************************************
+~ Ways to implement, 3 major categories
+
+1. Build time integration (compile time integration)
+   example: 
+   ~ Before container gets loaded in the browser, it gets access to ProductsList source code
+
+
+2. Run time integration (client side integration)
+   example: 
+   ~ After container gets loaded in the browser, it gets access to ProductsList source Code
+
+3. Server integration
+   ~ While sending down JS to load up container, a server decides on whether or not to include ProductsList source.
+
+
+NOTE: the whole point of micro-frontend is to have murican military precision isolation, just like microservices, hence the name Micro Frontend

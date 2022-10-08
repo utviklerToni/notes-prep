@@ -1,0 +1,7 @@
+Array helpers methods are very helpful to deal with data collection projects when we build any web apps.
+7 important array helper methods
+forEach, map, filter, find, every, some, reduce
+
+NOTE: These helps to avoid using for loops
+
+NOTE: while using map make sure to "return" the function or else we get an array of null

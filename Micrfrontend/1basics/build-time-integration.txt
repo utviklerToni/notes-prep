@@ -1,0 +1,21 @@
+
+
+1. engineer team develops ProductsList
+2. time to deploy
+3. publish ProductsList as an NPM package
+
+4. NPM registry => ProductsList
+
+5. team in charge of container installs ProductsList as a dependency
+6. container team builds their app
+7. output bundle that includes all the code for ProductsList
+
+~ Pros: 
+   easy to setup and understand
+
+~ Cons: 
+   1. container has to re-deploy every time ProductsList is updated.
+   2. tempting to tightly couple the container + ProductsList together (red flag)
+
+
+NOTE: the whole point of micro-frontend is to have murican military precision isolation, just like microservices, hence the name Micro Frontend, so this one is not that effective as run time 

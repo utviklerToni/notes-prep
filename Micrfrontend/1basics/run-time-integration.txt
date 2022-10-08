@@ -1,0 +1,12 @@
+1. team develops ProductsList
+2. Time to deploy
+3. ProductsList code deployed at some url
+4. User navigates to app.com, container app is laoded
+5. Container app fetches productlist.js and executes it
+
+~ Pros: 
+   1. ProductsList can be deployed independently at any 
+   2. Different versions of ProductsList can be deployed and container can decide which one to use
+
+~ Cons: 
+   1. Tooling + setup is far more complicated than build time intg.
