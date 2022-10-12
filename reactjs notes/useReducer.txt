@@ -55,4 +55,6 @@ Ex:
       );
    };
 
-   in the above code there is a chance that setFormIsValid() might run before the enteredPassword is processed and this can happen due to how react schedules state update/change,
+   in the above code there is a chance that setFormIsValid() might run before the enteredPassword is processed and this can happen due to how react schedules state update/change, for such case we can use useReducer()
+
+   

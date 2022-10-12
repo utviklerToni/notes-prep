@@ -1,0 +1,24 @@
+def: a singly linked lists contains a set of nodes, each node has two elements,
+  1. value
+  2. pointer (points to the next node)
+  
+  ~ first node is called head and the last node is called tail
+
+cons & pros:
+  ~ insertion in middle is lot better
+  ~ deleting is also easy than array
+  ~ sorting is also better
+  ~ elements are not indexed here so its O(n)
+  ~ traversing or iterating is slower than array
+
+**********************
+ 
+highlights:
+  prepend O(1)
+  append O(1)
+
+  lookup O(n)
+  insert O(n)
+  delete O(n)
+
+Pointer: a reference to another location in the memory
