@@ -1,0 +1,41 @@
+JS engine has to basic terms in its structure:
+1. Call Stack        2. Heap
+
+HVT:  when we store a variable with primitive type, i.e. var, const or let,
+      these variable gets stored in the call stack like a memory address with 
+      address, value pair.
+
+   so this ex: 
+
+   let age = 30;
+   oldAge = age;
+
+   age = 33;
+
+   here we can preserve the value of oldAge, because it is unchanged,
+   and age is re-assigned to a new memory address.
+
+HVT:  Heap on the other hand is a memory pool which stores only object with 
+      refernce type, 
+
+      ex:
+
+      const group1 = {
+         let age: 33,
+         let name: 'timmy'
+      }
+
+      //assinging a new variable to this group1
+
+      const fakeGroup1 = group1;
+
+      CAUTION
+      // this line below will change the original value as well
+      fakeGroup1.age = 27;
+
+      Because group1 is a refernce type and the address is still stored in call 
+      stack and we are able to change the original value;
+
+      We can create a shallow/lose copy and change the first Level value, but 
+      not nested object's key's value, via Object.assign()
+
