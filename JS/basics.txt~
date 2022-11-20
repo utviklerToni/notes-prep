@@ -39,4 +39,3 @@ HVT:  Heap on the other hand is a memory pool which stores only object with
       We can create a shallow/lose copy and change the first Level value, but 
       not nested object's key's value, via Object.assign()
 
-~ NodeList can be converted into array by Array.from();

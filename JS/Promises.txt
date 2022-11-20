@@ -1,0 +1,6 @@
+PROMISE : an object that is used as a placeholder for the future result of an asynchronous operation.
+ex : a response from a server (ajax calls)
+
+advantage of promise:
+    - no longer need to rely on events and callbacks passed into async func to handle async results.
+    - we can use it to chain promises for async ops and avoid "callback hell"
