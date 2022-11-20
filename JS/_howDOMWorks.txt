@@ -1,0 +1,53 @@
+DOM is used for ?
+-  Lets JS interact with the browser,
+-  can write JS to create, modify and delete HTML elements
+-  can also set styles, classes and attributes
+-  listen and respond to events
+-  DOM tree is generated from an HTML document, which we can then interact with;
+-  DOM is an API with lots of methods and properties to interact with DOM tree
+
+// Event listeners
+-  Two important phase,
+   1. Bubbling phase       2. Capture phase
+
+   -  Bubbling is default for addEventListener()
+   -  Its also useful for event delegation.
+   -  Bubbling can be stopped via e.stopPropagation(), but only when its a complex application, otherwise just leave it alone, considered bad practice
+
+   example: Event delegation
+
+   // page naviagtion
+   // NOT an efficent way 
+   document.querySelectorAll('.nav__link').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+         e.preventDefault();
+
+         const id = this.getAttribute('href');
+         document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+         });
+      });
+   });
+
+CAUTION: this way of selection will cause eventing bubbling and can lead to performance issue, so to only select a relevant element, we add condition to it.
+
+
+// we select a parent element and then bind the child element with conditions, 
+// once the condition satifies we execute our functionality
+// this way we avoid unnecessary event bubbling
+document.querySelector('.nav__link').addEventListener('click', function(e) {
+   e.preventDefault();
+   // matching strategy
+   if(e.target.classList.contains('nav__link')){
+      const id = this.getAttribute('href');
+      document.querySelector(id).scrollIntoView({
+         behavior: 'smooth',
+      });
+   }
+})
+
+HVT
+// .closest() is used a lot for event delegation
+// its like opposite of querySelectorAll
+
+-  we can only access direct sibling(previous and next)

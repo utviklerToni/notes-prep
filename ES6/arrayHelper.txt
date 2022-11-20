@@ -1,0 +1,13 @@
+Array helpers methods are very helpful to deal with data collection projects when we build any web apps.
+7 important array helper methods
+forEach, map, filter, find, every, some, reduce
+
+NOTE: These helps to avoid using for loops
+
+NOTE: while using map make sure to "return" the function or else we get an array of null
+
+CAUTION: where to use forEach() 
+
+  difference between for of and forEach loop
+  We cannot break out of a forEach loop, continue and break statements do work 
+  break in a forEach loop, it loops through the entire array

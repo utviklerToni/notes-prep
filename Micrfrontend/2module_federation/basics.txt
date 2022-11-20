@@ -1,0 +1,9 @@
+Steps:
+
+1. designate one app as the HOST aka container and one as REMOTE(products)
+2. in the remote, decide which modules(files) you want to make available to other projects
+3. set up module federation plugin in to expose those files
+4. in the host, decide which files you want to get from the remote
+5. set up module federation plugin to fetch those files
+6. in the host, refactor entry point to load asynchronously
+7. in the host, import whatever files you need from the remote

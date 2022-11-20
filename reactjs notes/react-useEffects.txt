@@ -45,3 +45,10 @@ myTimer is NOT added as a dependency because it's not a component-internal varia
 
 setTimeout is NOT added as a dependency because it's a built-in API (built-into the browser) - it's independent from React and your components, it doesn't change
 
+
+NOTE: we can also use "useEffect" as a clean up function
+   ~ useEffect(() => {
+      return () => {};
+   },[])
+   
+   in the above code snippet, when we return any function inside the useEffect, it is considered a clean up function and it will be executes whenever and wherever this is used, aka while unmounts

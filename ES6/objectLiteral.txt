@@ -1,0 +1,11 @@
+function makeReq(url, method) {
+   if(!method) {
+      method= 'GET'
+   }
+}
+
+// with obj literal
+
+function makeReq(url, method = 'GET') {
+   
+}

@@ -1,0 +1,7 @@
+includes():
+- checks for equaltiy
+- returns a boolean
+
+some():
+- checks for condition
+- returns a boolean 
