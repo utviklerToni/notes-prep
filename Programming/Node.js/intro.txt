@@ -1,0 +1,14 @@
+Isloating the execution of JS inside the browser, rather doing it on a separate server, since browser has some restriction/rules.
+
+Its an environment/container in which a program written in JS can be executed outside of browser. V8 engine executes these codes.
+
+Node.js uses a single threaded model in order to support async processing, so it can be more scalable.
+
+Pros:
+single-threaded, bases on event driven, non-blocking I/O model.
+For fast and scalable data-intensive apps.
+
+ex: chat app, video streaming, API with database behind it(NoSQL)
+
+Cons:
+Heavy server-side processing (CPU intensive)

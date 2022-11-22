@@ -52,3 +52,46 @@ NOTE: we can also use "useEffect" as a clean up function
    },[])
    
    in the above code snippet, when we return any function inside the useEffect, it is considered a clean up function and it will be executes whenever and wherever this is used, aka while unmounts
+   
+   HVT
+
+whats a side effect ?
+
+Main job of react is to evaluate a component and render the UI. Any other task
+would be called side effect, like 
+   - a component requesting data from server,
+   - storing data into the broswer, 
+   - sending http request,
+   - set and manage timers
+
+To handle side effect we will use useEffect() hook,
+   - called with 2 para,
+      ex: useEffect(() => {...}, [ dependencies ]);
+                    -----------    ------------
+                    1st parameter   2nd parameter 
+      
+      1st para: a function that should be executed after every component
+                evaluation if the specified dependencies changed.
+
+      2nd para: dependencies of this effect - the function only runs if the dependencies changed
+
+NOTE: const [formIsValid, setFormIsValid] = useState(false)
+  - here "setFormIsValid" will always be updated by react and will have
+  the lastest snapshot so we in such case can omitt that in following
+
+  useEffect(() => {
+    setFormIsValid( 
+      enteredEmail.inlcudes('@') && enteredPassword.trim().length > 6
+    )
+  },[enteredEmail, enteredPassword])
+
+NOTE: often side effects are http request, but its also a side effect if we
+listen to every keystroke and save those data and trigger a response aka user 
+entering a data in form, input ....etc
+
+NOTE: also avoid updating state(form,input for every key stroke) in useEffect() because react will keep on checking the DOM if it needs to update/render anything new, so if we are sending http request in such case we will end up sending more request end up having more than needed traffic on the network.
+
+NOTE: we can also "return" a single thing inside useEffect() as a clean up process, and it will run whenever the component that we specified in "Unmounts" from DOM  => This clean up return in called "CLEAN UP FUNCTION". And it runs right after executing side effect function
+
+
+useEffect runs after every component cycle

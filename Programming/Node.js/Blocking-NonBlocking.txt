@@ -1,0 +1,3 @@
+In node.js process there is only single thread running.
+Thread is a set of instructions which runs in CPU. 
+so for each app only 1 thread.

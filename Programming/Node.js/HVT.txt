@@ -1,0 +1,29 @@
+1. Purpose of module.exports ? 
+   - Encapsulate the related codes into a single unit of code which can be interpreted by moving all the functions into a single file. (isolating codes)
+
+2. Reactor Pattern ? 
+   - concept of async/sync operations,
+   - handler for I/O operations,
+   - trigger, notify and then queue the operations, hence generating Event queue
+
+3. Use case ? (all for backend)
+   - authentication
+   - error handling
+   - intensive data handing apps
+   - live chat apps, including vid streaming
+
+4. Middleware in Node.js
+
+5. URL module ?
+   - Splits up web address into a readable format
+
+6. Control flow function?
+   - the way code is executed between the async function calls.
+   - exe must be controlled, collect data...etc
+   - concurrency must be limited, 
+   - invoke the next program
+
+
+7. spawn() vs fork()
+   - spawn() : launch a new process with provided set of commands
+   - fork() : special instance of spawn, exe a new instance of v8 
