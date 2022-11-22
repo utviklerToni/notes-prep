@@ -1,0 +1,48 @@
+
+// use of const and let
+~ use const if you expect the value to be constant across all the steps of the function execution.
+
+~ use let if you expect the value to change across the steps.
+
+
+//arrow function
+~ value of "this" will get lost inside a default function structure and we might get error as "value of this is undefined". In that case we either use 
+   - ES6 function syntax
+   - .bind(this) to the function 
+   - or cache this to a variable outside the function and then use it
+    
+      ex1: 
+      const team = {
+         members: ['jim', 'jordan'],
+         teamName: 'temper',
+         teamSummary: function() {
+            return this.members.map(function(member) {
+               return `${member} is on ${this.teamName}
+            }.bind(this));
+         }
+      } 
+      ex:2
+      const team = {
+         members: ['jim', 'jordan'],
+         teamName: 'temper',
+         teamSummary: function() {
+            var self = this;
+            return this.members.map(function(member) {
+               return `${member} is on ${self.teamName}
+            })
+         }
+      }
+        ex:3
+        const team = {
+         members: ['jim', 'jordan'],
+         teamName: 'temper',
+         teamSummary: function() {
+            return this.members.map((member) => {
+               return `${member} is on ${this.teamName}
+            })
+         }
+      }
+
+
+
+ 
