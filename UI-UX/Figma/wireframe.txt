@@ -1,0 +1,22 @@
+WireFrame : Low fidelity layout, which has 3 purpose
+   1. it presents the information that will be displayed on the page in a little bit more detail than bunch of sketches & user flows.
+
+   2. it gives an outline of structure and layout of the page, and it conveys the overall direction & description of your user interface.
+
+   3. sort of a blue print but has clear and specific details, while giving everyone involved a good overview of the app/product. 
+
+   4. middle ground between high fidelity & prototype.
+
+   NOTE : must be influenced by past artifacts (sketches and user flows...etc)
+
+   WHY USE WireFrame?
+   - helps to test concepts and structure and helps to understand how users will navigate your product. 
+   - it helps to implement build, measure, learn cycle
+
+
+   3 useful reasons for WireFrame
+      1. clarity and common understanding amongst the team.
+
+      2. Testing with users uncovers pain points & opportunites
+
+      3. Present to clients and stakeholders to get feedback

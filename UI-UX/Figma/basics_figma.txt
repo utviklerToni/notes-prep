@@ -1,0 +1,6 @@
+Groups vs Frame : Group can be flexing than frame, aka responsive.
+   - use groups for shapes, like logos, so you can retain the dimension,
+   - helps keep the shapes and size
+
+Frame is like a box, the shapes are contianed within so its wont be responsive.
+If you wanna make a frame work like group then, set constriants to left-right & top-bottom, so the content within can react to the shape of the frame when you resize it.
